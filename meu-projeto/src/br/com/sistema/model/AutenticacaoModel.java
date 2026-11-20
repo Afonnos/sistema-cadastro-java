@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 public class AutenticacaoModel {
 
-    // Verifica se existe um login/senha correspondente na tabela autenticacao
     public boolean autenticar(String login, String senha) {
         String sql = "SELECT * FROM autenticacao WHERE login = ? AND senha = ?";
 
@@ -27,7 +26,6 @@ public class AutenticacaoModel {
         }
     }
 
-    // Cadastra um novo login (retorna false se o login já existir ou der erro)
     public boolean cadastrarNovoUsuario(String login, String senha) {
         String sql = "INSERT INTO autenticacao (login, senha) VALUES (?, ?)";
 

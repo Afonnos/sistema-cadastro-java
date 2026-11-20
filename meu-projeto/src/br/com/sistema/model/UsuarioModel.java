@@ -9,7 +9,6 @@ import java.util.List;
 
 public class UsuarioModel {
 
-    // Grava um novo usuário diretamente na tabela do MySQL
     public void adicionarUsuario(String nome) {
         String sql = "INSERT INTO usuarios (nome) VALUES (?)";
 
@@ -24,7 +23,6 @@ public class UsuarioModel {
         }
     }
 
-    // Busca todos os registros salvos no banco de dados
     public List<String> getUsuarios() {
         List<String> lista = new ArrayList<>();
         String sql = "SELECT nome FROM usuarios ORDER BY id ASC";
@@ -44,7 +42,6 @@ public class UsuarioModel {
         return lista;
     }
 
-    // Retorna a quantidade total de registros na tabela
     public int getTotalUsuarios() {
         String sql = "SELECT COUNT(*) FROM usuarios";
 
